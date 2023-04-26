@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import agent from "../agent";
 import { connect } from "react-redux";
 import { ITEM_FAVORITED, ITEM_UNFAVORITED } from "../constants/actionTypes";
+import fallback from "../../public/placeholder.png";
+
 
 const mapDispatchToProps = (dispatch) => ({
   favorite: (slug) =>
@@ -40,6 +42,7 @@ const ItemPreview = (props) => {
         src={item.image}
         className="card-img-top item-img"
         style={{ borderRadius: "20px" }}
+        onError={(e) => (e.currentTarget.src = fallback.src )}
       />
       <div className="card-body">
         <Link to={`/item/${item.slug}`} className="text-white">
