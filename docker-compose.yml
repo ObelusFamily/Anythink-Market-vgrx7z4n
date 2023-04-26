@@ -16,15 +16,11 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - ENGINE_BASE_URL=http://localhost:3003
-      - WILCO_ID=0
       - APP_ENV=dev
       - SECRET_KEY=secret
       - DEBUG=True
       - DATABASE_URL=postgresql://postgres:@postgres-python:5432/anythink-market
       - GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN=${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}
-      - HOSTNAME=host.docker.internal
-      - OPENAI_API_KEY=YOUR_API_KEY=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
     depends_on:
       - "postgres-python"
 
